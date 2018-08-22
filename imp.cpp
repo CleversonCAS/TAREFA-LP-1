@@ -24,12 +24,13 @@
 	{
 		
 		const int *min = first;
-		for(auto i=first ; i<last ; i++)
+		while(first!=last)
 		{
-			if(*i<*min)
+			if(*first<*min)
 			{
-				min=*i;
+				min=first;
 			}
+			first++;
 		}
 		return min;
 	}
@@ -47,12 +48,33 @@
 		{
 			*first*=n;
 		}
+	};
+	int multvetor(int *first_a, int *last_a, int *first_b)
+	{	
+		int soma(0);
+		
+		for(;first_a < last_a ; first_a++, first_b++)
+		{
+			soma+=(*first_a) * (*first_b);
+		}
+		return soma;
+	};
+	void compact(int *first, int *last)
+	{	
+		int c(0);
+		while(first!=last)
+		{
+			if(*first<=0)
+			{	c++;
+				for(int  *i(first);i!=last;i++)
+				{
+					if (*i>0)
+					{
+						std::swap(*i,*first);
+					}
+				}
+			}
+			first++;
+		}
+		last=last - c;
 	}
-	//int multvetor(int *first_a, int *last_a, int *first_b)
-	//{	
-	//	int soma(0)
-	//	for(;first_a<=last_a ; first_a++, first_b++)
-	//	{
-	//		soma+=first_a * first_b;
-	//	}
-	//}/*	
