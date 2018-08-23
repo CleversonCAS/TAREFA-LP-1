@@ -59,7 +59,7 @@
 		}
 		return soma;
 	};
-	void compact(int *first, int *last)
+	int *compact(int *first, int *last)
 	{	
 		int c(0);
 		while(first!=last)
@@ -77,4 +77,5 @@
 			first++;
 		}
 		last=last - c;
+		return last;
 	}
