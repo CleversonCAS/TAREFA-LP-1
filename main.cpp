@@ -28,9 +28,12 @@ int main()
 	cout<<"		PRODUTO DOS VETORES		\n"<<multvetor(begin(A), end(A), begin(D))<<endl;
 	cout<<"		COMPACT		"<<endl;
 	printv(begin(D),end(D));
-	compact(begin(D),end(D));
-	printv(begin(D),end(D));
-
+	auto last_compact=compact(begin(D),end(D));
+	for ( auto i ( begin ( D ) ) ; i != last_compact ; ++i )//deve imprimir apenas os elementos positivos
+	{
+		cout << * i << " ";
+		cout << std :: endl ;
+	}
 
 
 
