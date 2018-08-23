@@ -59,7 +59,9 @@
 		}
 		return soma;
 	};
-	int *compact(int *first, int *last)
+
+
+	int *compact(int *first, int *last) 
 	{	
 		int c(0);
 		while(first!=last)
@@ -78,4 +80,30 @@
 		}
 		last=last - c;
 		return last;
-	}
+	};
+
+	int *copy(const int *firstA,const int *lastA,int *firstB )
+	{
+		for(auto i(firstA), auto j(firstB); i !=lastA ; i++,j++)
+		{
+			*firstB=*FirstA
+		}
+		return firstB;
+	};
+	int *unique( int *first , int *last )
+	{
+		auto fi=first;
+		for(auto i(first) ; i!=last ; i++)
+		{
+			for(auto j(i+1) ; j!=last ;j++)
+			{
+				if(*i==*j)									/
+				{										
+					*j=0;						//elementos repetidos são zerados
+
+				}
+			}
+		}
+		auto laast=compact(int fi, int *last)	//chama a função compact, q "elemina" todos os elementos zerados
+		return laast;                           //PROB>>caso tenha 0 a funçao n funciona 100%, procurar outro jeito >:C 
+	};

@@ -13,7 +13,13 @@
 	//5
 	int multvetor(int *first_a, int *last_a, int *first_b);//multiplica elementos dos dois vetores e os soma	##funfa???????
 	//6
-	void compact(int *first, int *last);//joga os <=0 pra direita												##perguntar como fazer para diminuir o tamanho original do vetor
+	int *compact(int *first, int *last);//joga os <=0 pra direita												##perguntar como fazer para diminuir o tamanho original do vetor
+	//7
+	int *copy(const int *firstA,const int *lastA,int *firstB );//copia os elementos de um vetor pro outro       ##EM PROCESSO
+	//8
+	int *unique( int *first , int *last );//cancela todos os elementos repetidos                                ##EM PROCESSO
+	//9
+	
 
 
 

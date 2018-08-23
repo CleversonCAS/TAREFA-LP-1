@@ -28,12 +28,22 @@ int main()
 	cout<<"		PRODUTO DOS VETORES		\n"<<multvetor(begin(A), end(A), begin(D))<<endl;
 	cout<<"		COMPACT		"<<endl;
 	printv(begin(D),end(D));
-	auto last_compact=compact(begin(D),end(D));
+	auto last_compact=*compact(begin(D),end(D));
 	for ( auto i ( begin ( D ) ) ; i != last_compact ; ++i )//deve imprimir apenas os elementos positivos
 	{
 		cout << * i << " ";
 		cout << std :: endl ;
 	}
+	cout<<"			COPY	 B>C	\n"
+	<<"B"<<printv(begin(B),end(B))
+	<<"C"printv(begin(C),end(C))
+	<<endl;
+	auto copyC= copy(begin(B),end(B),begin(C));
+	for (  i ( begin ( D ) ) ; i !=copyC ; ++i )//Deve imprimir os elementos de B
+	{
+		cout << * i << " ";
+		cout << std :: endl ;
+	};
 
 
 
