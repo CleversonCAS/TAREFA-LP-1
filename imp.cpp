@@ -66,24 +66,26 @@
 
 
 	int *compact(int *first, int *last) 
-	{	auto a=first;
+	{	
+		int *w1=first-1;
+		int *i;
 		int c(0);
-		while(a!=last)
+		for(int *w2=first ; w2<=last ; w2++)
 		{
-			if(*a<=0)
-			{	c++;
-				for(int  *i(a);i!=last;i++)
+			if(*w2<=0)
+			{
+				w1++;
+				++c;
+				for( i=w1 ; i!=last ; i++)
 				{
-					if (*i>0)
+					if(*i>0)
 					{
-						std::swap(*i,*a);
-						break;
+						std::swap(*w2,*i);
 					}
 				}
 			}
-			a++;
 		}
-		return last-c;///////////////////c=5, deveria retornar last-5, feito manualmente funciona
+		return w1-c;
 	};
 
 	int *copy(const int *firstA,const int *lastA,int *firstB )
@@ -93,10 +95,10 @@
 		auto j(firstB);
 		for( i=firstA,  j=firstB; i !=lastA ; i++,j++)
 		{
-			*firstB=*firstA;
+			*j=*i;
 		}
 
-		return firstB+k+1;//////retornaria o last de B + 1
+		return firstB+k;//////retornaria o last de B + 1
 	};
 	int *unique( int *first , int *last )
 	{

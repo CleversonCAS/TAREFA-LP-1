@@ -1,7 +1,10 @@
 #include <iostream>
 #include <iterator>
 #include "fun.h"
-using namespace std;
+using std::cout;
+using std::endl;
+using std::begin;
+using std::end;
 
 int main()
 {
@@ -48,9 +51,9 @@ int main()
 	printv(begin(B),end(B));
 	cout<<"C"<<endl;
 	printv(begin(C),end(C));
-	auto copyC= *copy(begin(B),end(B),begin(C));
+	auto copyC= copy(begin(B),end(B),begin(C));
 	cout<<"NOVO C\n";
-	for ( auto i ( begin (C) ) ; *i !=copyC ; ++i )//Deve imprimir os elementos de B
+	for ( auto i ( begin (C) ) ; i !=copyC ; ++i )//Deve imprimir os elementos de B
 	{
 		cout << * i << " ";
 	};
