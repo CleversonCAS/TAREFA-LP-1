@@ -11,6 +11,10 @@
 
 		}
 	};
+	void printB()
+	{
+		std::cout<<"__________________________________________________"<<std::endl;
+	};
 	void printv(int *first , int *last)
 	{
 		while(first!=last)
@@ -59,22 +63,54 @@
 		}
 		return soma;
 	};
-	void compact(int *first, int *last)
-	{	
+
+
+	int *compact(int *first, int *last) 
+	{	auto a=first;
 		int c(0);
-		while(first!=last)
+		while(a!=last)
 		{
-			if(*first<=0)
+			if(*a<=0)
 			{	c++;
-				for(int  *i(first);i!=last;i++)
+				for(int  *i(a);i!=last;i++)
 				{
 					if (*i>0)
 					{
-						std::swap(*i,*first);
+						std::swap(*i,*a);
+						break;
 					}
 				}
 			}
-			first++;
+			a++;
 		}
-		last=last - c;
-	}
+		return last-c;///////////////////c=5, deveria retornar last-5, feito manualmente funciona
+	};
+
+	int *copy(const int *firstA,const int *lastA,int *firstB )
+	{	
+		auto k=std::distance(firstA,lastA);
+		auto i(firstA);
+		auto j(firstB);
+		for( i=firstA,  j=firstB; i !=lastA ; i++,j++)
+		{
+			*firstB=*firstA;
+		}
+
+		return firstB+k+1;//////retornaria o last de B + 1
+	};
+	int *unique( int *first , int *last )
+	{
+		auto fi=first;
+		for(auto i(first) ; i!=last ; i++)
+		{
+			for(auto j(i+1) ; j!=last ;j++)
+			{
+				if(*i==*j)									
+				{										
+					*j=0;						//elementos repetidos são zerados
+				}
+			}
+		}
+		
+		//return laast;                            	
+	};
