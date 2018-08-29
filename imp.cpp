@@ -67,6 +67,7 @@
 
 	int *compact(int *first, int *last) 
 	{	
+		auto firstn=first;
 		int *w1=first-1;
 		int *i;
 		int c(0);
@@ -81,11 +82,16 @@
 					if(*i>0)
 					{
 						std::swap(*w2,*i);
+						break;
 					}
 				}
 			}
 		}
-		return w1-c;
+		while(*firstn>0)
+		{
+			firstn++;
+		}
+		return firstn;
 	};
 
 	int *copy(const int *firstA,const int *lastA,int *firstB )
@@ -101,18 +107,26 @@
 		return firstB+k;//////retornaria o last de B + 1
 	};
 	int *unique( int *first , int *last )
-	{
-		auto fi=first;
-		for(auto i(first) ; i!=last ; i++)
+	{	
+		int a = std::distance(first,last);
+		int *vet = new int[a];
+		auto k=first;
+		int m =0;
+		for(auto i=first ; i!=last ; i++)
 		{
-			for(auto j(i+1) ; j!=last ;j++)
+			for(auto j = first; j<=i ; j++)
 			{
-				if(*i==*j)									
-				{										
-					*j=0;						//elementos repetidos são zerados
+				if(*j == *i+1)
+				{
+					break;
 				}
+				vet[m]=*i+1;
+				k++;
+				m++;
 			}
 		}
-		
-		//return laast;                            	
+		for(auto i(first) ; i!=k ; i++)
+		{
+			//////////////////////////
+		}
 	};

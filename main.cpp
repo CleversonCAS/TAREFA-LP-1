@@ -18,26 +18,26 @@ int main()
 	cout<<"		VETOR ORIGINAL		"<<endl;
 	printv(begin(A),end(A));
 	printB();
-	cout<<"		NEGATIVO 	"<<endl;
+	cout<<"		NEGATIVO 	1"<<endl;
 	negativo(begin(A),end(A));
 	printv(begin(A),end(A));
 	printB();
-	cout<<"		REVERSE 	"<<endl;
+	cout<<"		REVERSE 	3"<<endl;
 	reverse(begin(A),end(A));
 	printv(begin(A),end(A));	
 	printB();
-	cout<<"     MULTI * N, n(-2)	"<<endl;
+	cout<<"     MULTI * N, n(-2)	4"<<endl;
 	multi(begin(A),end(A),-2);
 	printv(begin(A),end(A));
 	printB();
-	cout<<"		MINIMO		"<<endl;
+	cout<<"		MINIMO		2"<<endl;
 	cout<<*mini(begin(A),end(A))<<endl;
 	printB();
 	cout<<"		VETOR ATUAL		"<<endl;
 	printB();
-	cout<<"		PRODUTO DOS VETORES		\n"<<multvetor(begin(A), end(A), begin(D))<<endl;
+	cout<<"		PRODUTO DOS VETORES		5\n"<<multvetor(begin(A), end(A), begin(D))<<endl;
 	printB();
-	cout<<"		COMPACT		"<<endl;
+	cout<<"		COMPACT		6"<<endl;
 	printv(begin(Q),end(Q));
 	auto last_compact=*compact(begin(Q),end(Q));
 	for ( auto i ( begin ( Q ) ) ; *i != last_compact ; ++i )//deve imprimir apenas os elementos positivos
@@ -46,7 +46,7 @@ int main()
 	}
 	cout << std :: endl;
 	printB();
-	cout<<"			COPY	 B>C	\n";
+	cout<<"			COPY	 B>C	7\n";
 	cout<<"B"<<endl;
 	printv(begin(B),end(B));
 	cout<<"C"<<endl;
@@ -58,6 +58,8 @@ int main()
 		cout << * i << " ";
 	};
 	cout << std :: endl ;
+	printB();
+	unique(begin(A) ,end(A) );
 
 
 
