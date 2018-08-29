@@ -14,6 +14,8 @@ int main()
 	int C[]={0,0,0,0,0,0,0,0,0,0};
 	int D[]={1,-1,0,3,-1,1,2,1,10,-1};
 	int Q[]={-2,-8,2,7,-3,10,1,0,-3,7};
+	int P[]={1,3,5,5,3,1,6,7,7,8,1};
+	int Z[]={1,0,0,1,0,1,0,1,0,0,0,1,1,1,0,0};
 	printB();
 	cout<<"		VETOR ORIGINAL		"<<endl;
 	printv(begin(A),end(A));
@@ -59,8 +61,22 @@ int main()
 	};
 	cout << std :: endl ;
 	printB();
-	unique(begin(A) ,end(A) );
-
+	cout<<"		UNIQUE 		"<<endl;
+	cout<<"		VETOR COM REPETIDOS		"<<endl;
+	printv(begin(P),end(P));
+	cout<<"		VETOR SEM REPETIDOS 		"<<endl;
+	unique(begin(P) ,end(P) );
+	printB();
+	cout<<"		APARTAID 		"<<endl;
+	cout<<"		VETOR 0,1		"<<endl;
+	printv(begin(Z),end(Z));
+	cout<<"		VETOR 0 		"<<endl;
+	auto apa=apartaid(begin(Z), end(Z));
+	for ( auto i ( begin (Z) ) ; i !=apa ; i++ )//Deve imprimir os elementos de B
+	{
+		cout << * i << " ";
+	};
+	cout << std :: endl ;
 
 
 	return 0;

@@ -18,8 +18,12 @@
 	//7
 	int *copy(const int *firstA,const int *lastA,int *firstB );//copia os elementos de um vetor pro outro       ##funfa
 	//8
-	int *unique( int *first , int *last );//cancela todos os elementos repetidos                                ##EM PROCESSO
+	void unique( int *first , int *last );//cancela todos os elementos repetidos                                ##EM PROCESSO
 	//9
+	int *apartaid(int *first, int *last);
+	//10
+	void paticao(int *first , int *last , int *pivot);
+
 	
 
 

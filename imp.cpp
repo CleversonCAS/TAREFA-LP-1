@@ -106,27 +106,63 @@
 
 		return firstB+k;//////retornaria o last de B + 1
 	};
-	int *unique( int *first , int *last )
+	void unique( int *first , int *last )
 	{	
 		int a = std::distance(first,last);
 		int *vet = new int[a];
-		auto k=first;
-		int m =0;
-		for(auto i=first ; i!=last ; i++)
+		int *k=first;
+		int j=0;
+		for(auto i=first ; i!=last ; j++,i++)
 		{
-			for(auto j = first; j<=i ; j++)
+			vet[j]=*i;
+		}
+		int aa=0;
+		int flag;
+		int m=0;
+		for(auto i=first ; i!=last ; aa++,i++)
+		{
+			for(auto j=0 ; j<aa ; j++)
 			{
-				if(*j == *i+1)
+				flag=1;
+				if(vet[j]==*i)
 				{
+					flag=0;
 					break;
 				}
-				vet[m]=*i+1;
-				k++;
+			}
+			if (flag==1)
+			{	
 				m++;
+				vet[m]=*i;
 			}
 		}
-		for(auto i(first) ; i!=k ; i++)
+
+		for(auto i(0) ; i<=m ; i++)
 		{
-			//////////////////////////
+			std::cout<< vet[i] <<" ";
 		}
+		std::cout<<std::endl;
 	};
+	int *apartaid(int *first, int *last)
+	{
+		int c(0);
+		for(auto i(first) ; i!=last ; i++)
+		{	
+			if(*i==1)
+			{
+				for (auto j=i+1; j!=last ; j++)
+				{
+					if(*j==0)
+					{
+						std::swap(*i,*j);
+						c++;
+						break;
+					}				
+				}
+			}
+		}
+		return first+c;
+	}
+	void paticao(int *first , int *last , int *pivot)
+	{
+	}
