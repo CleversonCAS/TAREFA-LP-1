@@ -16,68 +16,90 @@ int main()
 	int Q[]={-2,-8,2,7,-3,10,1,0,-3,7};
 	int P[]={1,3,5,5,3,1,6,7,7,8,1};
 	int Z[]={1,0,0,1,0,1,0,1,0,0,0,1,1,1,0,0};
+	int W[]={-5,7,10,7,8,9,1,7,-2,3};
+	int J[]={1,2,3,4,5,6,7,8,9,10};
+	int K[]={1,1,1,1,1,1,1,1,1,1};
 	printB();
-	cout<<"		VETOR ORIGINAL		"<<endl;
+	cout<<"		VETOR ORIGINAL	(utilizado até \"minimo\""")	"<<endl;
 	printv(begin(A),end(A));
 	printB();
-	cout<<"		NEGATIVO 	1"<<endl;
+
+	cout<<"		NEGATIVO 	"<<endl;
 	negativo(begin(A),end(A));
 	printv(begin(A),end(A));
 	printB();
-	cout<<"		REVERSE 	3"<<endl;
+
+	cout<<"		REVERSE 	"<<endl;
 	reverse(begin(A),end(A));
 	printv(begin(A),end(A));	
 	printB();
-	cout<<"     MULTI * N, n(-2)	4"<<endl;
+
+	cout<<"     MULTI * N, n(-2)	"<<endl;
 	multi(begin(A),end(A),-2);
 	printv(begin(A),end(A));
 	printB();
-	cout<<"		MINIMO		2"<<endl;
+
+	cout<<"		MINIMO		"<<endl;
 	cout<<*mini(begin(A),end(A))<<endl;
 	printB();
-	cout<<"		VETOR ATUAL		"<<endl;
 	printB();
-	cout<<"		PRODUTO DOS VETORES		5\n"<<multvetor(begin(A), end(A), begin(D))<<endl;
 	printB();
-	cout<<"		COMPACT		6"<<endl;
+
+	cout<<"		PRODUTO DOS VETORES		\nvetor(1):";
+	printv(begin(K),end(K));
+	cout<<"\nvetor(2):";
+	printv(begin(J),end(J));
+	cout<<"\nProduto:"<<multvetor(begin(K), end(K), begin(J))<<endl;
+	printB();
+
+	cout<<"		COMPACT		\nVetor com negativos: ";
 	printv(begin(Q),end(Q));
+	cout<<endl;
 	auto last_compact=*compact(begin(Q),end(Q));
+	cout<<"Vetor sem negativos: ";
 	for ( auto i ( begin ( Q ) ) ; *i != last_compact ; ++i )//deve imprimir apenas os elementos positivos
 	{
 		cout << * i << " ";
 	}
-	cout << std :: endl;
+	cout<<"\n";
 	printB();
-	cout<<"			COPY	 B>C	7\n";
-	cout<<"B"<<endl;
-	printv(begin(B),end(B));
-	cout<<"C"<<endl;
-	printv(begin(C),end(C));
+
+	cout<<"			COPY	 A->B	\n";
+	cout<<"Vetor A: ";
+	printv(begin(B),end(B));cout<<endl;
+	cout<<"Vetor B: ";
+	printv(begin(C),end(C));cout<<endl;
 	auto copyC= copy(begin(B),end(B),begin(C));
-	cout<<"NOVO C\n";
+	cout<<"NOVO B: ";
 	for ( auto i ( begin (C) ) ; i !=copyC ; ++i )//Deve imprimir os elementos de B
 	{
 		cout << * i << " ";
 	};
 	cout << std :: endl ;
 	printB();
+
 	cout<<"		UNIQUE 		"<<endl;
-	cout<<"		VETOR COM REPETIDOS		"<<endl;
-	printv(begin(P),end(P));
-	cout<<"		VETOR SEM REPETIDOS 		"<<endl;
+	cout<<"Vetor com repetidos: ";
+	printv(begin(P),end(P));cout<<endl;
+	cout<<"Vetor sem repetidos: ";
 	unique(begin(P) ,end(P) );
 	printB();
+
 	cout<<"		APARTAID 		"<<endl;
-	cout<<"		VETOR 0,1		"<<endl;
-	printv(begin(Z),end(Z));
-	cout<<"		VETOR 0 		"<<endl;
+	cout<<"        Vetor com 0 e 1: ";
+	printv(begin(Z),end(Z));cout<<endl;
+	cout<<"Novo vetor com apenas 0: ";
 	auto apa=apartaid(begin(Z), end(Z));
 	for ( auto i ( begin (Z) ) ; i !=apa ; i++ )//Deve imprimir os elementos de B
 	{
 		cout << * i << " ";
 	};
-	cout << std :: endl ;
-
+	cout << std :: endl;
+	printB();
+	cout<<"			PARTIÇÃO		"<<endl;
+	cout<<"                     Vetor embaralhado: ";printv(begin(W),end(W));cout<<endl;
+	particao(begin(W),end(W),begin(W)+5);
+	cout<<"Vetor com o 'pivot' na posição correta: ";printv(begin(W),end(W));cout<<endl;
 
 	return 0;
 }

@@ -1,2 +1,2 @@
 # TAREFA-LP-1
-tarefa única, com todas as questões
+A execuçao da Main imprime um exemplo utilazando cada função.

@@ -10,11 +10,11 @@
 			*first++ *=-1;
 
 		}
-	};
+	}
 	void printB()
 	{
 		std::cout<<"__________________________________________________"<<std::endl;
-	};
+	}
 	void printv(int *first , int *last)
 	{
 		while(first!=last)
@@ -23,7 +23,7 @@
 			first++;
 		}
 		std::cout<<"\n";
-	};
+	}
 	const int *mini( const int *first , const int *last )
 	{
 		
@@ -45,14 +45,14 @@
 		{
 			std::swap(*first, *last);
 		}
-	};
+	}
 	void multi(int *first, int *last, int n)
 	{
 		for(;first <= last ; first++)
 		{
 			*first*=n;
 		}
-	};
+	}
 	int multvetor(int *first_a, int *last_a, int *first_b)
 	{	
 		int soma(0);
@@ -62,7 +62,7 @@
 			soma+=(*first_a) * (*first_b);
 		}
 		return soma;
-	};
+	}
 
 
 	int *compact(int *first, int *last) 
@@ -92,7 +92,7 @@
 			firstn++;
 		}
 		return firstn;
-	};
+	}
 
 	int *copy(const int *firstA,const int *lastA,int *firstB )
 	{	
@@ -105,7 +105,7 @@
 		}
 
 		return firstB+k;//////retornaria o last de B + 1
-	};
+	}
 	void unique( int *first , int *last )
 	{	
 		int a = std::distance(first,last);
@@ -142,7 +142,7 @@
 			std::cout<< vet[i] <<" ";
 		}
 		std::cout<<std::endl;
-	};
+	}
 	int *apartaid(int *first, int *last)
 	{
 		int c(0);
@@ -163,6 +163,20 @@
 		}
 		return first+c;
 	}
-	void paticao(int *first , int *last , int *pivot)
+	void particao(int *first , int *last , int *pivot)
 	{
+		/*A mais simples resolução da questão é colocar o vetor 
+		em ordem crescente, n importa qual o pivot, sempre os
+		menores que ele estarão na esquerda e os maiores na direita(Já que a ordem dos elementos não importa)*/
+		int menor=*first;
+		for(auto i(first) ; i!=last ; i++)
+		{
+			for(auto j(i) ; j!=last ; j++)
+			{
+				if(*j < *i)
+				{
+					std::swap(*i,*j);
+				}
+			}
+		}
 	}
